@@ -443,7 +443,7 @@ ScreenFeedback As screen:
                         Patch(Feedbacks,varFeedbackSubmit,Form_Feedback.Updates);
                         Notify("Thank you for your Feedback",NotificationType.Success);
                     )
-                Text: ="Submit"
+                Text: ="Clear"
                 ZIndex: =1
 
             Button3_1 As button:
