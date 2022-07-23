@@ -16,7 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ github.ref }}
         with:
-          tag_name: ${{ FeedbackApp-${{ steps.date.outputs.date }} }}
-          release_name: ${{ FeedbackApp-${{ steps.date.outputs.date }} }}
+          tag_name: FeedbackApp-${{ steps.date.outputs.date }}
+          release_name: FeedbackApp-${{ steps.date.outputs.date }}
           draft: false
           prerelease: false
