@@ -1,7 +1,7 @@
 {
   "DatasetName": "default.cds",
   "EntityName": "Feedbacks",
-  "InstanceUrl": "https://org81cb9f70.crm6.dynamics.com/",
+  "InstanceUrl": "https://org1e514ed3.crm6.dynamics.com/",
   "LocalReferenceDSJson": {
     "entitySetName": "new_feedbacks",
     "logicalName": "new_feedback"
