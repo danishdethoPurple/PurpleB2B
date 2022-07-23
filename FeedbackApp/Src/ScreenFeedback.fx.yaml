@@ -1,0 +1,448 @@
+ScreenFeedback As screen:
+    OnVisible: =Set(varFeedbackSubmit, LookUp(Feedbacks,Name = User().FullName))
+
+    ContainerFeedback As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =2
+
+        Label1 As label:
+            FontWeight: =Bold
+            PaddingLeft: =30
+            Size: =18
+            Text: ="Submit your Feedback"
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Form_Feedback As form:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DataSource: =Feedbacks
+            DefaultMode: =If(IsBlank(varFeedbackSubmit), FormMode.New, FormMode.Edit)
+            Height: =Parent.Height
+            Item: =varFeedbackSubmit
+            LayoutMinHeight: =250
+            LayoutMinWidth: =400
+            NumberOfColumns: =1
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Person_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_Person"
+                Default: =ThisItem.Person
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Feedbacks],DataSourceInfo.DisplayName,"new_Person")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue7.Selected
+                Width: =1366
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey7 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: ="Feedback By"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue7 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =LookUp(Users,'Primary Email' = User().Email)
+                    DisplayFields: =["fullname","internalemailaddress"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@Feedbacks].Person)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["fullname"]
+                    SearchItems: =Search(Choices([@Feedbacks].Person),DataCardValue7.SearchText,"fullname")
+                    SelectMultiple: =false
+                    Template: =ListItemTemplate.Person
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage5 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue7.Y + DataCardValue7.Height
+                    ZIndex: =3
+
+                StarVisible5 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey7.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey7.Y
+                    ZIndex: =4
+
+            Talk_DataCard1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_talk"
+                Default: =ThisItem.Talk
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Feedbacks],DataSourceInfo.DisplayName,"new_talk")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Feedbacks], DataSourceInfo.MaxLength, "new_talk")
+                Required: =false
+                Update: =DataCardValue6.Text
+                Width: =1366
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey6 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue6 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: ="DevOps for PowerPlatform"
+                    DelayOutput: =true
+                    DisplayMode: =DisplayMode.Disabled
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue6.Y + DataCardValue6.Height
+                    ZIndex: =3
+
+                StarVisible4 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey6.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey6.Y
+                    ZIndex: =4
+
+            Details_DataCard1 As typedDataCard.textualMultiLineEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_details"
+                Default: =ThisItem.Details
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Feedbacks],DataSourceInfo.DisplayName,"new_details")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue4.Text
+                Width: =1366
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey4 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: ="Comments"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =80
+                    Mode: =TextMode.MultiLine
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4.Y + DataCardValue4.Height
+                    ZIndex: =3
+
+                StarVisible2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey4.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4.Y
+                    ZIndex: =4
+
+            Rating_DataCard1 As typedDataCard.numberEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_rating"
+                Default: =ThisItem.Rating
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Feedbacks],DataSourceInfo.DisplayName,"new_rating")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =Value(DataCardValue5.Text)
+                Width: =1366
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey5 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: |
+                        ="Rating"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =varRating
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Visible: =false
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue5.Y + DataCardValue5.Height
+                    ZIndex: =3
+
+                StarVisible3 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey5.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey5.Y
+                    ZIndex: =4
+
+                Star1 As star:
+                    BorderThickness: =1
+                    Fill: =If(IsStarOne =true, RGBA(56, 96, 178, 1), White)
+                    Height: =25
+                    OnSelect: =If(IsStarOne = true, Set(varRating,0); Set(IsStarOne,false) ,  Set(varRating,1);Set(IsStarOne,true))
+                    Width: =25
+                    X: =30
+                    Y: =49
+                    ZIndex: =5
+
+                Star1_1 As star:
+                    BorderThickness: =1
+                    Fill: =If(IsStarTwo =true, RGBA(56, 96, 178, 1), White)
+                    Height: =25
+                    OnSelect: =If(IsStarTwo = true, Set(varRating,0);  Set(IsStarTwo,false) ;Set(IsStarOne,false), Set(varRating,2);Set(IsStarTwo,true);Set(IsStarOne,true))
+                    Width: =25
+                    X: =68
+                    Y: =49
+                    ZIndex: =6
+
+                Star1_2 As star:
+                    BorderThickness: =1
+                    Fill: =If(IsStarThree =true, RGBA(56, 96, 178, 1), White)
+                    Height: =25
+                    OnSelect: =If(IsStarThree = true, Set(varRating,0); Set(IsStarThree,false); Set(IsStarTwo,false);Set(IsStarOne,false) ,  Set(varRating,3);Set(IsStarThree,true); Set(IsStarTwo,true);Set(IsStarOne,true))
+                    Width: =25
+                    X: =105
+                    Y: =49
+                    ZIndex: =7
+
+                Star1_3 As star:
+                    BorderThickness: =1
+                    Fill: =If(IsStarFour =true, RGBA(56, 96, 178, 1), White)
+                    Height: =25
+                    OnSelect: =If(IsStarFour = true, Set(varRating,0); Set(IsStarFour,false); Set(IsStarThree,false); Set(IsStarTwo,false);Set(IsStarOne,false) ,  Set(varRating,4);Set(IsStarFour,true); Set(IsStarThree,true);Set(IsStarTwo,true);Set(IsStarOne,true))
+                    Width: =25
+                    X: =142
+                    Y: =49
+                    ZIndex: =8
+
+                Star1_4 As star:
+                    BorderThickness: =1
+                    Fill: =If(IsStarFive =true, RGBA(56, 96, 178, 1), White)
+                    Height: =25
+                    OnSelect: =If(IsStarFive = true,Set(varRating,0); Set(IsStarFive,false); Set(IsStarFour,false); Set(IsStarThree,false); Set(IsStarTwo,false);Set(IsStarOne,false) , Set(varRating,5);Set(IsStarFive,true);Set(IsStarFour,true); Set(IsStarThree,true);Set(IsStarTwo,true);Set(IsStarOne,true))
+                    Width: =25
+                    X: =180
+                    Y: =49
+                    ZIndex: =9
+
+            Name_DataCard1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_name"
+                Default: =ThisItem.Name
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@Feedbacks],DataSourceInfo.DisplayName,"new_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@Feedbacks], DataSourceInfo.MaxLength, "new_name")
+                Required: =true
+                Update: =DataCardValue1.Text
+                Visible: =false
+                Width: =1366
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: ="Feedb Back By"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =User().FullName
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1.Y
+                    ZIndex: =4
+
+        Container2 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =20
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =20
+            ZIndex: =4
+
+            Button3 As button:
+                OnSelect: |-
+                    =If(IsBlank(varFeedbackSubmit),
+                        SubmitForm(Form_Feedback);
+                        Set(varFeedbackSubmit,Form_Feedback.LastSubmit);
+                        If(!IsBlankOrError(varFeedbackSubmit),
+                        Notify("Thank you for your Feedback",NotificationType.Success),
+                        Notify("Feedback submission failed. Please try Again.",NotificationType.Error)
+                        );
+                        ,
+                        Patch(Feedbacks,varFeedbackSubmit,Form_Feedback.Updates);
+                        Notify("Thank you for your Feedback",NotificationType.Success);
+                    )
+                Text: ="Submit"
+                ZIndex: =1
+

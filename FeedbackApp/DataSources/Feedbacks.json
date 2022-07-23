@@ -1,0 +1,122 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_feedbacks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_feedback",
+    "MaxGetRowsCount": 500,
+    "Name": "Feedbacks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_details": "Details",
+      "new_feedback_AsyncOperations": "System Jobs",
+      "new_feedback_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_feedback_DuplicateBaseRecord": "Duplicate Records (new_feedback_DuplicateBaseRecord)",
+      "new_feedback_DuplicateMatchingRecord": "Duplicate Records (new_feedback_DuplicateMatchingRecord)",
+      "new_feedback_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_feedback_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_feedback_ProcessSession": "Process Sessions",
+      "new_feedback_SyncErrors": "Sync Errors",
+      "new_feedbackid": "Feedback",
+      "new_likedislike": "LikeDislike",
+      "new_name": "Name",
+      "new_Person": "Person",
+      "new_rating": "Rating",
+      "new_talk": "Talk",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Feedbacks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Feedbacks (Views)",
+    "Name": "_new_feedback_views",
+    "RelatedEntityName": "Feedbacks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "6b4919dc-2a02-406c-85ae-47e6c25c1c23": "Inactive Feedbacks",
+      "6e3b36d0-4a1b-4f30-a7ea-76f229399f51": "Active Feedbacks",
+      "71af7089-b52b-41da-adaf-487060ebba77": "Feedback Lookup View",
+      "c49481fa-2d3b-423d-b944-464da42e8b93": "Feedback Advanced Find View",
+      "e1294873-8dd2-44f9-a95c-24dc77a6d8d8": "Feedback Associated View"
+    }
+  },
+  {
+    "DisplayName": "LikeDislike (Feedbacks)",
+    "Name": "new_feedback_new_likedislike",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_likedislike",
+        "OptionSetReferenceEntityName": "Feedbacks"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "new_likedislike",
+    "RelatedEntityName": "Feedbacks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Feedbacks)",
+    "Name": "new_feedback_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Feedbacks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Feedbacks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Feedbacks)",
+    "Name": "new_feedback_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Feedbacks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Feedbacks",
+    "Type": "OptionSetInfo"
+  }
+]
