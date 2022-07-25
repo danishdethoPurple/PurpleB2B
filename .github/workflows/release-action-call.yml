@@ -15,8 +15,7 @@ jobs:
       solution_exported_folder: out/exported/
       solution_folder: out/solutions/
       solution_target_folder: solutions/
-    secrets:
-      envSecret: ${{ secrets.PowerPlatformSPN }}
+
   Release-solution-Feedback:
     uses: ./.github/workflows/release-solution-to-prod-with-inputs.yml
     with:
