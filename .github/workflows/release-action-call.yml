@@ -22,6 +22,7 @@ jobs:
       envSecret: ${{ secrets.PowerPlatformSPN }}
 
   Release-solution-Feedback:
+    needs: [ Export-solution-Feedback ]
     uses: ./.github/workflows/release-solution-to-prod-with-inputs.yml
     with:
       #You can specify the solution name here
