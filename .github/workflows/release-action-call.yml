@@ -15,14 +15,8 @@ jobs:
       solution_exported_folder: out/exported/
       solution_folder: out/solutions/
       solution_target_folder: solutions/
-     #Update your values here
-      BUILD_ENVIRONMENT_URL: https://org81cb9f70.crm6.dynamics.com/
-      PRODUCTION_ENVIRONMENT_URL: https://orgd0989e10.crm6.dynamics.com
-      CLIENT_ID: 291adacd-5854-4cd4-be80-558cfe4e4dbf
-      TENANT_ID: 3501e278-e6f5-4e0b-a897-abfa9b1c4136    
     secrets:
       envSecret: ${{ secrets.PowerPlatformSPN }}
-    
   Release-solution-Feedback:
     uses: ./.github/workflows/release-solution-to-prod-with-inputs.yml
     with:
