@@ -3,26 +3,30 @@ name: export-and-branch-solution
 #  unpack it and prepare, commit and push a git branch with the changes
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       # Change this value
       solution_name:
+        type: string
         description: 'name of the solution to worked on from Power Platform'
         required: true
         default: ALMLab
        #Do Not change these values
       solution_exported_folder:
+        type: string
         description: 'folder name for staging the exported solution *do not change*'
         required: true
         default: out/exported/
       solution_folder:
+        type: string
         description: 'staging the unpacked solution folder before check-in *do not change*'
         required: true
         default: out/solutions/
       solution_target_folder: 
-       description: 'folder name to be created and checked in *do not change*'
-       required: true
-       default: solutions/
+        type: string
+        description: 'folder name to be created and checked in *do not change*'
+        required: true
+        default: solutions/
 env:
 #edit your values here
   ENVIRONMENT_URL: 'https://org81cb9f70.crm6.dynamics.com'
