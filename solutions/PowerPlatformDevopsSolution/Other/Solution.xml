@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ImportExportXml version="9.2.22064.196" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ImportExportXml version="9.2.22071.170" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>PowerPlatformDevopsSolution</UniqueName>
     <LocalizedNames>
@@ -82,6 +82,7 @@
     <RootComponents>
       <RootComponent type="1" schemaName="new_feedback" behavior="0" />
       <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="29" id="{7e14c6c3-640a-ed11-82e5-002248943d5f}" behavior="0" />
       <RootComponent type="300" schemaName="new_getfeedbackb2b_f8d27" behavior="0" />
     </RootComponents>
     <MissingDependencies />
