@@ -43,19 +43,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1.AccessibleLabel"
+                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1.AccessibleLabel",
+                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ScreenFeedback",
-                "type": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1"
+                "type": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7"
               }
             }
           ],
@@ -73,19 +73,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7.AccessibleLabel"
+                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7.AccessibleLabel",
+                  "fullyQualifiedName": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "ScreenFeedback",
-                "type": "ScreenFeedback.ContainerFeedback.Form_Feedback.Person_DataCard1.DataCardValue7"
+                "type": "ScreenFeedback.ContainerFeedback.Form_Feedback.Name_DataCard1.DataCardValue1"
               }
             }
           ],
