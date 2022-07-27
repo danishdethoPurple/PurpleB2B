@@ -2,12 +2,7 @@
   "ComponentIndexes": {},
   "ControlUniqueIds": {
     "App": 1,
-    "Button3": 40,
-    "Button3_1": 43,
-    "Button3_2": 41,
-    "Button3_3": 42,
-    "Button3_4": 44,
-    "Button3_5": 45,
+    "Button3_1": 41,
     "Container2": 39,
     "ContainerFeedback": 6,
     "DataCardKey1": 16,
@@ -48,7 +43,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "07/27/2022 02:42:45",
+  "HeaderLastSavedDateTimeUTC": "07/27/2022 10:12:52",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {},
   "LocalDatabaseReferencesAsEmpty": false,
@@ -104,12 +99,7 @@
   },
   "PublishOrderIndices": {
     "App": 0,
-    "Button3": 34,
     "Button3_1": 35,
-    "Button3_2": 36,
-    "Button3_3": 37,
-    "Button3_4": 38,
-    "Button3_5": 38,
     "Container2": 33,
     "ContainerFeedback": 0,
     "DataCardKey1": 10,
@@ -152,7 +142,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 0.4028512,
+    "AnalysisLoadTime": 0.5265219,
     "ControlCount": {
       "button": 6,
       "combobox": 1,
@@ -164,7 +154,7 @@
       "text": 4,
       "typedDataCard": 5
     },
-    "DeserializationLoadTime": 1.0175666,
+    "DeserializationLoadTime": 1.9836672,
     "ErrorCount": 0
   },
   "WasLocalDatabaseReferencesEmpty": false
