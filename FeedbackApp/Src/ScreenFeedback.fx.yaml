@@ -494,3 +494,35 @@ ScreenFeedback As screen:
                 Text: ="Clear"
                 ZIndex: =4
 
+            Button3_4 As button:
+                OnSelect: |-
+                    =If(IsBlank(varFeedbackSubmit),
+                        SubmitForm(Form_Feedback);
+                        Set(varFeedbackSubmit,Form_Feedback.LastSubmit);
+                        If(!IsBlankOrError(varFeedbackSubmit),
+                        Notify("Thank you for your Feedback",NotificationType.Success),
+                        Notify("Feedback submission failed. Please try Again.",NotificationType.Error)
+                        );
+                        ,
+                        Patch(Feedbacks,varFeedbackSubmit,Form_Feedback.Updates);
+                        Notify("Thank you for your Feedback",NotificationType.Success);
+                    )
+                Text: ="Clear"
+                ZIndex: =5
+
+            Button3_5 As button:
+                OnSelect: |-
+                    =If(IsBlank(varFeedbackSubmit),
+                        SubmitForm(Form_Feedback);
+                        Set(varFeedbackSubmit,Form_Feedback.LastSubmit);
+                        If(!IsBlankOrError(varFeedbackSubmit),
+                        Notify("Thank you for your Feedback",NotificationType.Success),
+                        Notify("Feedback submission failed. Please try Again.",NotificationType.Error)
+                        );
+                        ,
+                        Patch(Feedbacks,varFeedbackSubmit,Form_Feedback.Updates);
+                        Notify("Thank you for your Feedback",NotificationType.Success);
+                    )
+                Text: ="Clear"
+                ZIndex: =6
+
